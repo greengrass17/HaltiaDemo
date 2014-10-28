@@ -1,0 +1,17 @@
+<ion-view title="Photo Gallery">
+  <ion-content class="has-header">
+      <div class="card">
+        <div class="item item-body">
+            <img ng-repeat="photo in photos" ng-show="isActive($index)" ng-src="{{photo.link}}" />
+        </div>
+        <div class="button-bar">
+            <button class="button button-light" ng-click="showPrev()">
+                <i class="icon ion-ios7-arrow-back"></i>
+            </button>
+            <button class="button button-light" ng-click="showNext()">
+                <i class="icon ion-ios7-arrow-forward"></i>
+            </button>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

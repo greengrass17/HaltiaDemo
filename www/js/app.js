@@ -34,7 +34,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/gallery",
       views: {
         'menuContent' :{
-          templateUrl: "templates/gallery.html"
+          templateUrl: "templates/gallery.html",
+          controller: 'GalleryCtrl'
+        }
+      }
+    })
+
+    .state('app.slide-show', {
+      url: "/gallery/:imageId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/slide-show.html",
+          controller: 'GalleryCtrl'
         }
       }
     })

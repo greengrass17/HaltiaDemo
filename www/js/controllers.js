@@ -45,4 +45,38 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('GalleryCtrl', function($scope) {
+  $scope.photos = [
+    { link: "img/img (1).png", id: 1 },
+    { link: "img/img (2).png", id: 2 },
+    { link: "img/img (3).png", id: 3 },
+    { link: "img/img (4).png", id: 4 },
+    { link: "img/img (5).png", id: 5 },
+  ];
+
+  // initial image index
+    $scope._Index = 0;
+
+    // if a current image is the same as requested image
+    $scope.isActive = function (index) {
+        return $scope._Index === index;
+    };
+
+    // show prev image
+    $scope.showPrev = function () {
+        $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
+    };
+
+    // show next image
+    $scope.showNext = function () {
+        $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+    };
+
+    // show a certain image
+    $scope.showPhoto = function (index) {
+        $scope._Index = index;
+    };
+
 });
