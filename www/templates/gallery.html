@@ -4,7 +4,7 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ul class="gallery">
-      <li class="item" ng-repeat="photo in photos">
+      <li ng-repeat="photo in photos">
         <a href="#/app/gallery/{{photo.id}}"><img ng-src="{{photo.link}}"  ng-click="showPhoto($index)"/></a>
       </li>
     </ul>

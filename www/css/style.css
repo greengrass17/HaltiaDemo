@@ -5,12 +5,15 @@
     overflow: hidden;
     position: relative;
     float: left;
-    line-height: 0;
+    line-height: 200px;
+    text-align: center;
+    padding: 1px;
 }
 
 .gallery li img {
-    width: 100%;
-    height: auto;
+    width: 150%;
+    vertical-align: middle;
+    margin: -50% -100%;
 }
 
 @media only screen and (max-width : 480px) {
@@ -37,10 +40,28 @@
    }
 }
 
-card > .full-size {
+.big-image > .full-size {
     min-width: 100%;
 }
 
 .full-size > img {
     width: 100%;
+}
+
+#left-slider {
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transition: 0.2s linear all;
+}
+
+#right-slider {
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transition: 0.2s linear all;
 }
