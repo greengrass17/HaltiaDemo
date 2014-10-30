@@ -1,7 +1,7 @@
 <ion-view title="Photo Gallery">
   <ion-content class="has-header">
       <div class="card">
-        <div class="item item-body">
+        <div class="item full-size">
             <img ng-repeat="photo in photos" ng-show="isActive($index)" ng-src="{{photo.link}}" />
         </div>
         <div class="button-bar">

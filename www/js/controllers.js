@@ -54,6 +54,7 @@ angular.module('starter.controllers', [])
     { link: "img/img (3).png", id: 3 },
     { link: "img/img (4).png", id: 4 },
     { link: "img/img (5).png", id: 5 },
+    { link: "img/img (6).png", id: 6 },
   ];
 
   // initial image index

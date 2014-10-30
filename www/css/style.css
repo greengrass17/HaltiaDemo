@@ -1,1 +1,46 @@
 /* Empty. Add your own CSS if you like */
+.gallery li{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    line-height: 0;
+}
+
+.gallery li img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width : 480px) {
+   /* Smartphone view: 3 tile */
+   .gallery li {
+      width: 33.3%;
+      padding-bottom: 33.3%;
+   }
+}
+
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   /* Smartphone view: 4 tile */
+   .gallery li {
+      width: 25%;
+      padding-bottom: 25%;
+   }
+}
+
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   /* Smartphone view: 5 tile */
+   .gallery li {
+      width: 20%;
+      padding-bottom: 20%;
+   }
+}
+
+card > .full-size {
+    min-width: 100%;
+}
+
+.full-size > img {
+    width: 100%;
+}
