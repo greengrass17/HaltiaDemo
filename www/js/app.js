@@ -41,11 +41,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     .state('app.slide-show', {
-      url: "/gallery/:imageId",
+      url: "/gallery/:photoId",
       views: {
         'menuContent' :{
           templateUrl: "templates/slide-show.html",
-          controller: 'GalleryCtrl'
+          controller: 'SlideShowCtrl'
         }
       }
     })

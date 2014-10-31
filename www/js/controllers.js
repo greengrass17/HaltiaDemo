@@ -47,27 +47,41 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('GalleryCtrl', function($scope) {
-  $scope.photos = [
-    { link: "img/img (1).jpg", id: 1 },
-    { link: "img/img (2).jpg", id: 2 },
-    { link: "img/img (3).jpg", id: 3 },
-    { link: "img/img (4).jpg", id: 4 },
-    { link: "img/img (5).jpg", id: 5 },
-    { link: "img/img (6).jpg", id: 6 },
-    { link: "img/img (7).jpg", id: 7 },
-    { link: "img/img (8).jpg", id: 8 },
-    { link: "img/img (9).jpg", id: 9 },
-    { link: "img/img (10).jpg", id: 10 },
-    { link: "img/img (11).jpg", id: 11 },
-    { link: "img/img (12).jpg", id: 12 },
-    { link: "img/img (13).jpg", id: 13 },
-    { link: "img/img (14).jpg", id: 14 },
-    { link: "img/img (15).jpg", id: 15 },
-  ];
+.factory('PhotoAlbum', function() {
 
-  // initial image index
-    $scope._Index = 0;
+ var PhotoAlbum = {
+    photos: [
+        { link: "img/img (1).jpg", id: 1 },
+        { link: "img/img (2).jpg", id: 2 },
+        { link: "img/img (3).jpg", id: 3 },
+        { link: "img/img (4).jpg", id: 4 },
+        { link: "img/img (5).jpg", id: 5 },
+        { link: "img/img (6).jpg", id: 6 },
+        { link: "img/img (7).jpg", id: 7 },
+        { link: "img/img (8).jpg", id: 8 },
+        { link: "img/img (9).jpg", id: 9 },
+        { link: "img/img (10).jpg", id: 10 },
+        { link: "img/img (11).jpg", id: 11 },
+        { link: "img/img (12).jpg", id: 12 },
+        { link: "img/img (13).jpg", id: 13 },
+        { link: "img/img (14).jpg", id: 14 },
+        { link: "img/img (15).jpg", id: 15 },
+    ]
+  };
+
+ return PhotoAlbum;
+})
+
+.controller('GalleryCtrl', function($scope, PhotoAlbum) {
+  $scope.photos = PhotoAlbum.photos;
+})
+
+.controller('SlideShowCtrl', function($scope, PhotoAlbum, $stateParams) {
+    $scope.photos = PhotoAlbum.photos;
+
+
+    // initial image index
+    $scope._Index = parseInt($stateParams.photoId) - 1;
 
     // if a current image is the same as requested image
     $scope.isActive = function (index) {
@@ -82,11 +96,6 @@ angular.module('starter.controllers', [])
     // show next image
     $scope.showNext = function () {
         $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
-    };
-
-    // show a certain image
-    $scope.showPhoto = function (index) {
-        $scope._Index = index;
     };
 
 });
